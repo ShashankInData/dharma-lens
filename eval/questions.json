@@ -1,0 +1,32 @@
+[
+  {
+    "id": "q001",
+    "question": "I am anxious about the results of my work. What should I remember?",
+    "expected_verses": ["2.47", "2.48", "3.19"],
+    "themes": ["outcome-anxiety", "work", "detachment"]
+  },
+  {
+    "id": "q002",
+    "question": "How do I control anger before I say something harmful?",
+    "expected_verses": ["2.62", "2.63", "3.37", "16.21"],
+    "themes": ["anger", "self-control"]
+  },
+  {
+    "id": "q003",
+    "question": "How can I stay calm when people around me disturb me?",
+    "expected_verses": ["12.15", "2.48", "6.26"],
+    "themes": ["calmness", "non-reactivity", "mind"]
+  },
+  {
+    "id": "q004",
+    "question": "I keep losing focus and my mind runs everywhere. What does the Gita suggest?",
+    "expected_verses": ["6.5", "6.6", "6.26"],
+    "themes": ["mind", "focus", "self-control"]
+  },
+  {
+    "id": "q005",
+    "question": "How should I act when I know my duty but I feel attached to the outcome?",
+    "expected_verses": ["2.47", "2.48", "3.19", "3.30"],
+    "themes": ["duty", "detachment", "action"]
+  }
+]
