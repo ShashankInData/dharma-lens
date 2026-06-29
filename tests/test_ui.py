@@ -70,4 +70,4 @@ def test_answer_question_rejects_blank_input():
     answer, sources = answer_question("   ", index=FakeIndex(), embedder=FakeEmbedder())
 
     assert answer == "Ask a specific life, work, emotion, discipline, or relationship question."
-    assert sources == "No retrieval run."
+    assert sources == "_No retrieval run._"

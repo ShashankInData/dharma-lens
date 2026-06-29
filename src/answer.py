@@ -119,7 +119,8 @@ What this does not decide: This app should not force a spiritual answer when the
 
 Sources:
 
-Confidence: low"""
+Confidence: low
+"""
 
 
 def build_unsupported_citation_answer(
@@ -134,7 +135,8 @@ Please retry with stricter grounding or inspect the retrieved verses directly.
 
 Sources: {allowed}
 
-Confidence: low""".format(
+Confidence: low
+""".format(
         unsupported=", ".join(validation.unsupported_citations),
         allowed=", ".join(validation.allowed_citations),
     )
@@ -190,7 +192,8 @@ What this does not decide: It does not replace practical planning, professional 
 
 Sources: {citations}
 
-Confidence: medium"""
+Confidence: medium
+"""
 
 
 def generate_grounded_answer(
@@ -249,6 +252,30 @@ def openrouter_llm(prompt: str) -> str:
     return data["choices"][0]["message"]["content"]
 
 
+def featherless_llm(prompt: str) -> str:
+    """Call Featherless AI provider via Hugging Face Inference API."""
+    token = os.getenv("HF_TOKEN")
+    if not token:
+        raise RuntimeError("HF_TOKEN is not set")
+    try:
+        from huggingface_hub import InferenceClient
+    except ImportError as e:
+        raise RuntimeError("huggingface_hub not installed") from e
+
+    model = os.getenv("DHARMA_LENS_LLM_MODEL", "Qwen/Qwen2.5-1.5B-Instruct")
+    provider = os.getenv("DHARMA_LENS_LLM_PROVIDER", "featherless-ai")
+    client = InferenceClient(model=model, provider=provider, token=token)
+    try:
+        completion = client.chat.completions.create(
+            messages=[{"role": "user", "content": prompt}],
+            max_tokens=300,
+            temperature=0.2,
+        )
+        return completion.choices[0].message.content.strip()
+    except Exception as e:
+        raise RuntimeError(f"Featherless provider failed: {e}") from e
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Generate grounded Dharma Lens answer")
     parser.add_argument("question", help="User question")
@@ -266,7 +293,9 @@ def main() -> None:
     embedder = LocalSentenceTransformerEmbedder(args.model)
     chunks = retrieve(args.question, index, embedder, top_k=args.top_k)
     answer = generate_grounded_answer(
-        args.question, chunks, llm=openrouter_llm if args.use_openrouter else None
+        args.question,
+        chunks,
+        llm=openrouter_llm if args.use_openrouter else None,
     )
     print(answer)
 
