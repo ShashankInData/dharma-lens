@@ -30,3 +30,5 @@
 - Published Hugging Face Space at `https://huggingface.co/spaces/ShashhankIndata/dharma-lens`.
 - Verified live Space runtime reached RUNNING.
 - Verified live Gradio API prediction returns a grounded answer citing Bhagavad Gita 2.47.
+- Published GitHub repository at `https://github.com/ShashankInData/dharma-lens`.
+- Configured repository homepage, description, and topics.

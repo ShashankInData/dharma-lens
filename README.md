@@ -22,7 +22,7 @@ The goal is not to create an AI guru. The goal is to retrieve real Bhagavad Gita
 
 ## Current Status
 
-Phase: deployed on Hugging Face Spaces. Next: GitHub repository setup and broader evaluation.
+Phase: deployed on Hugging Face Spaces and published to GitHub. Next: portfolio polishing and broader evaluation.
 
 Implemented:
 - Dataset review.

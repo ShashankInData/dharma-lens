@@ -39,7 +39,12 @@
 
 ## Next
 
-- [ ] Create/push GitHub repository.
+- [x] Create/push GitHub repository.
+- [x] Configure GitHub repo homepage, description, and topics.
+
+## Next
+
 - [ ] Add project screenshots/GIF after UI review.
 - [ ] Expand evaluation set from 5 to 20 questions.
 - [ ] Decide small open-source synthesis model if deterministic answer quality is not enough.
+- [ ] Add portfolio case-study writeup.
