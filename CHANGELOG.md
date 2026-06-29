@@ -32,3 +32,5 @@
 - Verified live Gradio API prediction returns a grounded answer citing Bhagavad Gita 2.47.
 - Published GitHub repository at `https://github.com/ShashankInData/dharma-lens`.
 - Configured repository homepage, description, and topics.
+- Researched chat UI direction and practical open-source LLM options for the next iteration.
+- Live-tested Hugging Face provider access: `Qwen/Qwen2.5-1.5B-Instruct` works with `provider='featherless-ai'` and handles typo normalization.

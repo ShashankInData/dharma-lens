@@ -44,7 +44,14 @@
 
 ## Next
 
+- [x] Research UI direction and practical open-source LLM options.
+
+## Next
+
+- [ ] Build ChatGPT-style chat UI with source cards.
+- [ ] Add staged retrieval/reflecting status.
+- [ ] Add optional Qwen 2.5 1.5B HF provider synthesis behind feature flag.
+- [ ] Set HF_TOKEN Space secret only after code path is tested.
 - [ ] Add project screenshots/GIF after UI review.
 - [ ] Expand evaluation set from 5 to 20 questions.
-- [ ] Decide small open-source synthesis model if deterministic answer quality is not enough.
 - [ ] Add portfolio case-study writeup.
